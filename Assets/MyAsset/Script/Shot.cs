@@ -29,13 +29,6 @@ public class Shot : MonoBehaviour
     void Update()
     {
         BeforeFramePos = this.gameObject.transform.position;
-
-        
-
-        Debug.DrawLine
-            (
-                NMPos,
-                NMPos + MeshN, Color.green);
     }
 
 
@@ -105,5 +98,13 @@ public class Shot : MonoBehaviour
     private void EndControllerVibration()
     {
         OVRInput.SetControllerVibration(0, 0);
+    }
+
+    private void DebugLine()
+    {
+        Debug.DrawLine
+    (
+        NMPos,
+        NMPos + MeshN, Color.green);
     }
 }

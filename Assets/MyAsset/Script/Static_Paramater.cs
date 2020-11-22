@@ -34,6 +34,18 @@ public static class Static_Paramater
     //ターゲットを外した数
     public static int MissTargetNum = 0;
 
+    //練習用変数
+    //練習か
+    //UIScriptで変更
+    public static bool IsPractice = false;
+    //球数
+    public static int PracticeRemainingBallNum = 30;
+    //ターゲットに当たった数
+    public static int PracticeHitTargetNum = 0;
+    //ターゲットを外した数
+    public static int PracticeMissTargetNum = 0;
+
+
     //ディレイがtrueの時は、CreateBallSpanにDelaySpanを加算して返す
     public static float GetCreateBallSpan()
     {
@@ -72,5 +84,31 @@ public static class Static_Paramater
     {
         return RemainingBallNum;
     }
-    
+
+    #region Practice
+    public static Vector3 GetPracticeTargetNum()
+    {
+        return new Vector3(PracticeHitTargetNum, PracticeMissTargetNum, PracticeRemainingBallNum);
+    }
+
+    public static void AddPracticeHitTargetNum()
+    {
+        PracticeHitTargetNum++;
+    }
+
+    public static void AddPracticeMissTargetNum()
+    {
+        PracticeMissTargetNum++;
+    }
+
+    public static void MinusPracticeRemainingBallNum()
+    {
+        PracticeRemainingBallNum--;
+        if (PracticeRemainingBallNum < 0)
+        {
+            IsStop = true;
+            SceneManager.LoadScene("PracticeToProduction");
+        }
+    }
+    #endregion
 }

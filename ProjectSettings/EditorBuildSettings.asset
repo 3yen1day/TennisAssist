@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/MyAsset/Scenes/TennisAssist/StartMenu.unity
     guid: 14436a99c6d506b4db634a45860f710e
   - enabled: 1
-    path: Assets/MyAsset/Scenes/TennisAssist/Practice_PoseAssistControllerTennis.unity
-    guid: 32fe80ef7e8682b4ca226c90989299dc
+    path: Assets/MyAsset/Scenes/TennisAssist/Practice.unity
+    guid: a27a942cb3907644c995dbfb7fa4c1a6
   - enabled: 1
-    path: Assets/MyAsset/Scenes/TennisAssist/PoseAssistControllerTennis.unity
-    guid: 079f4fafdd93e1d4282f73c8ce4172ce
+    path: Assets/MyAsset/Scenes/TennisAssist/PracticeToProduction.unity
+    guid: 823ef8c813e16e140be91cfbd496f654
+  - enabled: 1
+    path: Assets/MyAsset/Scenes/TennisAssist/Production.unity
+    guid: 77cb2793d2e51a14cb7f82f92b3136dc
   - enabled: 1
     path: Assets/MyAsset/Scenes/TennisAssist/EndMenu.unity
     guid: afdc23ad61e7258419f28c4a87d5da33

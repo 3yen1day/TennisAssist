@@ -6,47 +6,50 @@ using System.IO;
 public static class Static_WriteCSV
 {
     //ファイルの保存場所
-    public static StreamWriter TargetFilePath = File.AppendText(Application.dataPath + @"\TextFile\Target.txt"); //Application.dataPath = AssetFolder
-    public static StreamWriter RacketSpeedFilePath = File.AppendText(Application.dataPath + @"\TextFile\RacketSpeed.txt");
-    public static StreamWriter RacketQuatFilePath = File.AppendText(Application.dataPath + @"\TextFile\RacketQuat.txt");
-    public static StreamWriter RacketRotFilePath = File.AppendText(Application.dataPath + @"\TextFile\RacketRot.txt");
-    public static StreamWriter FallPointFilePath = File.AppendText(Application.dataPath + @"\TextFile\FallPoint.txt");
+    public static StreamWriter TargetFilePath = File.AppendText(Application.dataPath + @"\TextFile\01\Target.txt"); //Application.dataPath = AssetFolder
+    public static StreamWriter RacketSpeedFilePath = File.AppendText(Application.dataPath + @"\TextFile\01\RacketSpeed.txt");
+    public static StreamWriter RacketQuatFilePath = File.AppendText(Application.dataPath + @"\TextFile\01\RacketQuat.txt");
+    public static StreamWriter RacketRotFilePath = File.AppendText(Application.dataPath + @"\TextFile\01\RacketRot.txt");
+    public static StreamWriter FallPointFilePath = File.AppendText(Application.dataPath + @"\TextFile\01\FallPoint.txt");
 
     //ターゲットにHITしたとき
     public static void WriteHitTargetNum()
     {
-        TargetFilePath.WriteLine("T,");
+        if(!(Static_Paramater.IsPractice)) TargetFilePath.WriteLine("T,");
     }
 
     //ターゲットを外したとき
     public static void WriteMissTargetNum()
     {
-        TargetFilePath.WriteLine("F,");
+        if (!(Static_Paramater.IsPractice)) TargetFilePath.WriteLine("F,");
     }
 
     //ラケットスピード
     public static void WriteRacketSpeed(float speed)
     {
-        RacketSpeedFilePath.WriteLine(speed.ToString()+",");
+        if (!(Static_Paramater.IsPractice)) RacketSpeedFilePath.WriteLine(speed.ToString()+",");
     }
 
     //ラケットの角度（クォータニオン）
     public static void WriteRacketQuat(Quaternion rot)
     {
-        RacketQuatFilePath.WriteLine(rot.ToString() + ",");
-        WriteRacketRot(rot.eulerAngles);
+        if (!(Static_Paramater.IsPractice))
+        {
+            RacketQuatFilePath.WriteLine(rot.ToString() + ",");
+            WriteRacketRot(rot.eulerAngles);
+        }
     }
 
     //ラケットの角度（Vector3）
     private static void WriteRacketRot(Vector3 rot)
     {
-        RacketRotFilePath.WriteLine(rot.ToString() + ",");
+        if (!(Static_Paramater.IsPractice)) RacketRotFilePath.WriteLine(rot.ToString() + ",");
     }
 
     //落下地点座標
     public static void WriteFallPoint(Vector3 point)
     {
-        FallPointFilePath.WriteLine(point.ToString() + ",");
+        if (!(Static_Paramater.IsPractice)) FallPointFilePath.WriteLine(point.ToString() + ",");
     }
     
     //Tabで改行

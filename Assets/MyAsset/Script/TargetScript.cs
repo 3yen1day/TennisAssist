@@ -1,17 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 //ターゲットPrefabに付ける
 public class TargetScript : MonoBehaviour
 {
     float t = 0;
-    bool IsPractice = false;
 
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Practice_PoseAssistControllerTennis") IsPractice = true;
     }
 
     void Update()
@@ -19,10 +16,10 @@ public class TargetScript : MonoBehaviour
         t += Time.deltaTime;
         if(t > Static_Paramater.GetCreateBallSpan() && !(Static_Paramater.IsStop))
         {
-            if (IsPractice)
+            if (Static_Paramater.IsPractice)
             {
-                Static_PracticeParamater.AddMissTargetNum();
-                Static_PracticeParamater.MinusRemainingBallNum();
+                Static_Paramater.AddPracticeMissTargetNum();
+                Static_Paramater.MinusPracticeRemainingBallNum();
             }
             else
             {
@@ -38,10 +35,10 @@ public class TargetScript : MonoBehaviour
     {
         if(!(col.gameObject.tag == "Ball") && !(Static_Paramater.IsStop))
         {
-            if (IsPractice)
+            if (Static_Paramater.IsPractice)
             {
-                Static_PracticeParamater.AddHitTargetNum();
-                Static_PracticeParamater.MinusRemainingBallNum();
+                Static_Paramater.AddPracticeHitTargetNum();
+                Static_Paramater.MinusPracticeRemainingBallNum();
             }
             else
             {

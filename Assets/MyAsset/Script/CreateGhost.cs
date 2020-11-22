@@ -98,7 +98,7 @@ public class CreateGhost : MonoBehaviour
             ChangeMaterialParam(Ghost, new Vector4(1, 0, 0, 1), 0.5f);
             //破壊する時間はGetCreateBallSpanじゃない
             //この関数を呼び出すのに、Delayspan分の時間を使っているので
-            Destroy(Ghost, Static_Paramater.CreateBallSpan-2.0f);
+            Destroy(Ghost, Static_Paramater.CreateBallSpan*0.5f);
         }
         
         //FixedUpdateにしたら誤差がなくなったので必要なし

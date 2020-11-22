@@ -2,19 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class UIScript : MonoBehaviour
 {
     Text text;
     float t = 0;
-    bool IsPractice = false;
 
     void Start()
     {
         text = GameObject.Find("UIText").GetComponent<Text>();
-        //シーンが練習か否か
-        if (SceneManager.GetActiveScene().name == "Practice_PoseAssistControllerTennis") IsPractice = true;
 
         UIText();
     }
@@ -32,9 +28,9 @@ public class UIScript : MonoBehaviour
     void UIText()
     {
         Vector3 score;
-        if (IsPractice)
+        if (Static_Paramater.IsPractice)
         {
-            score = Static_PracticeParamater.GetTargetNum();
+            score = Static_Paramater.GetPracticeTargetNum();
         }
         else
         {
