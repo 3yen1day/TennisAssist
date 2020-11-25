@@ -30,7 +30,6 @@ public class CreateTargetPrefab : MonoBehaviour
         NotRandamPos.y = RangeMax.y;
         NotRandamPos.z = RangeMax.z;
         
-
     }
 
     void Update()

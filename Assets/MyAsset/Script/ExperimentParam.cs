@@ -21,20 +21,27 @@ public class ExperimentParam : MonoBehaviour
     }
 
     ///////////////////実験群選択///////////////////////
-    private ExperimentType experiment = ExperimentType.Ghost;
+    private ExperimentType experiment = ExperimentType.Delay;
     ///////////////////利き手選択///////////////////////
     private HandType hand = HandType.Right;
 
     void Start()
     {
-        if(experiment == ExperimentType.Ghost)
+
+        //練習か否か
+        if (SceneManager.GetActiveScene().name == "Practice") Static_Paramater.IsPractice = true;
+        else Static_Paramater.IsPractice = false;
+
+        Static_Paramater.IsStop = false;
+
+        if (experiment == ExperimentType.Ghost)
         {
             Static_Paramater.CreateGhost = true;
             Static_Paramater.IsDelay = false;
         }
         else if(experiment == ExperimentType.Delay)
         {
-            Static_Paramater.CreateGhost = false;
+            Static_Paramater.CreateGhost = true;
             Static_Paramater.IsDelay = true;
         }
         else if(experiment == ExperimentType.Nothing)
@@ -50,11 +57,5 @@ public class ExperimentParam : MonoBehaviour
         {
             Static_Paramater.IsRight = false;
         }
-
-        //練習か否か
-        if (SceneManager.GetActiveScene().name == "Practice") Static_Paramater.IsPractice = true;
-        else Static_Paramater.IsPractice = false;
-
-        Static_Paramater.IsStop = false;
     }
 }

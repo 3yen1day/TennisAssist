@@ -11,7 +11,6 @@ public class ScoreUI : MonoBehaviour {
         targetText = this.gameObject.GetComponent<Text>();
 	}
 	
-	
 	public void ChangeText (string ScoreText) {
         targetText.text = ScoreText;
     }

@@ -10,7 +10,6 @@ public class SceneController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             if (SceneManager.GetActiveScene().name == "StartMenu") SceneManager.LoadScene("Practice");
-
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {

@@ -12,21 +12,12 @@ public class UIScript : MonoBehaviour
     {
         text = GameObject.Find("UIText").GetComponent<Text>();
 
-        UIText();
-    }
-    
-    void Update()
-    {
-        t += Time.deltaTime;
-        if (t> Static_Paramater.CreateBallSpan + 0.05f)
-        {
-            UIText();
-        }
-        
+        //UIText();
     }
 
-    void UIText()
+    public void UIText()
     {
+        Debug.Log("!!!!!!!!!!!!!!!");
         Vector3 score;
         if (Static_Paramater.IsPractice)
         {

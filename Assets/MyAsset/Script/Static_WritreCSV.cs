@@ -49,7 +49,7 @@ public static class Static_WriteCSV
     //落下地点座標
     public static void WriteFallPoint(Vector3 point)
     {
-        if (!(Static_Paramater.IsPractice)) FallPointFilePath.WriteLine(point.ToString() + ",");
+        if (!(Static_Paramater.IsPractice)) FallPointFilePath.WriteLine(Static_Paramater.GetRemainingBallNum() + point.ToString() + ",");
     }
     
     //Tabで改行

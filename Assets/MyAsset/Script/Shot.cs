@@ -5,11 +5,10 @@ using UnityEngine;
 //当たり判定とするオブジェクトにアタッチ
 public class Shot : MonoBehaviour
 {
-
+    //スピード調整
+    float SpeedSize = 10.0f;
     Rigidbody rigid;
     Vector3 BeforeFramePos = new Vector3(0, 0, 0);
-    [SerializeField]
-    float SpeedSize = 1.0f;
     //法線用ノーマルメッシュ
     [SerializeField]
     GameObject NormalMeshObject;
@@ -57,7 +56,7 @@ public class Shot : MonoBehaviour
             Vector3 Difference = this.gameObject.transform.position - BeforeFramePos;
 
             //速度ベクトル計算
-            float Speed = Mathf.Max(0.09f, Difference.magnitude * 20.0f);
+            float Speed = Mathf.Max(0.09f, Difference.magnitude * SpeedSize);
 
             Vector3 Force = Reflection * Speed;
             

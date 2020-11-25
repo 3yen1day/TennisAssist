@@ -19,14 +19,12 @@ public static class Static_Paramater
 
 	//ラケットの軌道を作るかどうか
 	public static bool CreateOrbit = false;
-    //ターゲットの配置をランダムにするかどうか
-    public static bool TargetRand = false;
     //球数
-    public static int RemainingBallNum = 30;
-    //スピード
-    public static Vector3 Speed;
+    public static int RemainingBallNum = 5;
     //止める
     public static bool IsStop = false;
+    //ターゲットの配置をランダムにするかどうか
+    public static bool TargetRand = false;
 
 
     //ターゲットに当たった数
@@ -39,7 +37,7 @@ public static class Static_Paramater
     //UIScriptで変更
     public static bool IsPractice = false;
     //球数
-    public static int PracticeRemainingBallNum = 30;
+    public static int PracticeRemainingBallNum = 5;
     //ターゲットに当たった数
     public static int PracticeHitTargetNum = 0;
     //ターゲットを外した数
@@ -49,7 +47,7 @@ public static class Static_Paramater
     //ディレイがtrueの時は、CreateBallSpanにDelaySpanを加算して返す
     public static float GetCreateBallSpan()
     {
-        if (IsDelay) return CreateBallSpan + DelaySpan;
+        if (IsDelay) return CreateBallSpan*3.0f;
         else return CreateBallSpan;
     }
 
@@ -78,6 +76,7 @@ public static class Static_Paramater
         {
             IsStop = true;
             SceneManager.LoadScene("EndMenu");
+
         }
     }
     public static int GetRemainingBallNum()
@@ -108,6 +107,7 @@ public static class Static_Paramater
         {
             IsStop = true;
             SceneManager.LoadScene("PracticeToProduction");
+
         }
     }
     #endregion
