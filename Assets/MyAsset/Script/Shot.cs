@@ -15,7 +15,7 @@ public class Shot : MonoBehaviour
 
     private Vector3 NMPos = new Vector3(0, 0, 0);
     private Vector3 MeshN = new Vector3(0, 0, 0);
-
+    
     private CreateGhost CreateGhostScript;
 
     void Start()
@@ -36,6 +36,7 @@ public class Shot : MonoBehaviour
     {
         if (col.gameObject.tag == "Ball")
         {
+
             //ラケットに当たった後はJumpingに変更
             //その後、床にバウンドしたら、Untaggedに変更
             col.gameObject.tag = "Jumping";

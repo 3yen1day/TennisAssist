@@ -20,7 +20,7 @@ public static class Static_Paramater
 	//ラケットの軌道を作るかどうか
 	public static bool CreateOrbit = false;
     //球数
-    public static int RemainingBallNum = 5;
+    public static int RemainingBallNum = 50;
     //止める
     public static bool IsStop = false;
     //ターゲットの配置をランダムにするかどうか
@@ -37,7 +37,7 @@ public static class Static_Paramater
     //UIScriptで変更
     public static bool IsPractice = false;
     //球数
-    public static int PracticeRemainingBallNum = 5;
+    public static int PracticeRemainingBallNum = 15;
     //ターゲットに当たった数
     public static int PracticeHitTargetNum = 0;
     //ターゲットを外した数
