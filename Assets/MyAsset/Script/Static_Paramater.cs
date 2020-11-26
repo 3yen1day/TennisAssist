@@ -83,9 +83,10 @@ public static class Static_Paramater
     {
         return RemainingBallNum;
     }
+	
 
-    #region Practice
-    public static Vector3 GetPracticeTargetNum()
+	#region Practice
+	public static Vector3 GetPracticeTargetNum()
     {
         return new Vector3(PracticeHitTargetNum, PracticeMissTargetNum, PracticeRemainingBallNum);
     }
