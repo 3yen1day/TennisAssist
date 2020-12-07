@@ -13,14 +13,16 @@ public static class Static_Paramater
     public static float DelaySpan = 1.0f;
 	//ボール生成のスパン
 	public static float CreateBallSpan = 3.0f;
-	//利き手は右手か
-	public static bool IsRight = true;
+    //Dela
+    public static float DelayRacketSpan = 4.0f;
+    //利き手は右手か
+    public static bool IsRight = true;
 
 
 	//ラケットの軌道を作るかどうか
 	public static bool CreateOrbit = false;
     //球数
-    public static int RemainingBallNum = 50;
+    public static int RemainingBallNum = 100;
     //止める
     public static bool IsStop = false;
     //ターゲットの配置をランダムにするかどうか
@@ -37,7 +39,7 @@ public static class Static_Paramater
     //UIScriptで変更
     public static bool IsPractice = false;
     //球数
-    public static int PracticeRemainingBallNum = 15;
+    public static int PracticeRemainingBallNum = 10;
     //ターゲットに当たった数
     public static int PracticeHitTargetNum = 0;
     //ターゲットを外した数

@@ -21,7 +21,7 @@ public class ExperimentParam : MonoBehaviour
     }
 
     ///////////////////実験群選択///////////////////////
-    private ExperimentType experiment = ExperimentType.Ghost;
+    private ExperimentType experiment = ExperimentType.Nothing;
     ///////////////////利き手選択///////////////////////
     private HandType hand = HandType.Right;
 
@@ -57,5 +57,7 @@ public class ExperimentParam : MonoBehaviour
         {
             Static_Paramater.IsRight = false;
         }
+
+        RenderSettings.skybox.SetFloat("_Rotation", 90.0f);    // 回す
     }
 }

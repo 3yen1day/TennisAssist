@@ -22,7 +22,9 @@ public class BallprefabScript : MonoBehaviour {
     {
         if (this.gameObject.tag == "Jumping")
         {
-            Static_WriteCSV.WriteFallPoint(this.gameObject.transform.position);
+            Vector2 p = new Vector2(this.gameObject.transform.position.x, this.gameObject.transform.position.z);
+            Vector2 targetPoint = new Vector2(0.0f, 30.0f);
+            Static_WriteCSV.WriteFallPoint(Vector2.Distance(p, targetPoint));
             this.gameObject.tag = "Untagged";
         }
         if(this.gameObject.tag != "Ball")

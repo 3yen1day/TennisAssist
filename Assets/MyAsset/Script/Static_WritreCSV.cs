@@ -15,19 +15,19 @@ public static class Static_WriteCSV
     //ターゲットにHITしたとき
     public static void WriteHitTargetNum()
     {
-        if(!(Static_Paramater.IsPractice)) TargetFilePath.WriteLine("T,");
+        if(!(Static_Paramater.IsPractice)) TargetFilePath.WriteLine("T");
     }
 
     //ターゲットを外したとき
     public static void WriteMissTargetNum()
     {
-        if (!(Static_Paramater.IsPractice)) TargetFilePath.WriteLine("F,");
+        if (!(Static_Paramater.IsPractice)) TargetFilePath.WriteLine("F");
     }
 
     //ラケットスピード
     public static void WriteRacketSpeed(float speed)
     {
-        if (!(Static_Paramater.IsPractice)) RacketSpeedFilePath.WriteLine(speed.ToString()+",");
+        if (!(Static_Paramater.IsPractice)) RacketSpeedFilePath.WriteLine(speed.ToString());
     }
 
     //ラケットの角度（クォータニオン）
@@ -35,7 +35,7 @@ public static class Static_WriteCSV
     {
         if (!(Static_Paramater.IsPractice))
         {
-            RacketQuatFilePath.WriteLine(rot.ToString() + ",");
+            RacketQuatFilePath.WriteLine(rot.ToString());
             WriteRacketRot(rot.eulerAngles);
         }
     }
@@ -43,13 +43,13 @@ public static class Static_WriteCSV
     //ラケットの角度（Vector3）
     private static void WriteRacketRot(Vector3 rot)
     {
-        if (!(Static_Paramater.IsPractice)) RacketRotFilePath.WriteLine(rot.ToString() + ",");
+        if (!(Static_Paramater.IsPractice)) RacketRotFilePath.WriteLine(rot.ToString() );
     }
 
     //落下地点座標
-    public static void WriteFallPoint(Vector3 point)
+    public static void WriteFallPoint(float dist)
     {
-        if (!(Static_Paramater.IsPractice)) FallPointFilePath.WriteLine(Static_Paramater.GetRemainingBallNum() + point.ToString() + ",");
+        if (!(Static_Paramater.IsPractice)) FallPointFilePath.WriteLine(Static_Paramater.GetRemainingBallNum() + ", " + dist.ToString());
     }
     
     //Tabで改行
