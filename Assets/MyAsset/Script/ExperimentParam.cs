@@ -21,7 +21,7 @@ public class ExperimentParam : MonoBehaviour
     }
 
     ///////////////////実験群選択///////////////////////
-    private ExperimentType experiment = ExperimentType.Nothing;
+    private ExperimentType experiment = ExperimentType.Delay;
     ///////////////////利き手選択///////////////////////
     private HandType hand = HandType.Right;
 
