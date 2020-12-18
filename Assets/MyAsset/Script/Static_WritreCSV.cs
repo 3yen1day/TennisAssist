@@ -6,11 +6,11 @@ using System.IO;
 public static class Static_WriteCSV
 {
     //ファイルの保存場所
-    public static StreamWriter TargetFilePath = File.AppendText(Application.dataPath + @"\TextFile\05\Target.txt"); //Application.dataPath = AssetFolder
-    public static StreamWriter RacketSpeedFilePath = File.AppendText(Application.dataPath + @"\TextFile\05\RacketSpeed.txt");
-    public static StreamWriter RacketQuatFilePath = File.AppendText(Application.dataPath + @"\TextFile\05\RacketQuat.txt");
-    public static StreamWriter RacketRotFilePath = File.AppendText(Application.dataPath + @"\TextFile\05\RacketRot.txt");
-    public static StreamWriter FallPointFilePath = File.AppendText(Application.dataPath + @"\TextFile\05\FallPoint.txt");
+    public static StreamWriter TargetFilePath = File.AppendText(Application.dataPath + @"\TextFile\20\Target.txt"); //Application.dataPath = AssetFolder
+    public static StreamWriter RacketSpeedFilePath = File.AppendText(Application.dataPath + @"\TextFile\20\RacketSpeed.txt");
+    public static StreamWriter RacketQuatFilePath = File.AppendText(Application.dataPath + @"\TextFile\20\RacketQuat.txt");
+    public static StreamWriter RacketRotFilePath = File.AppendText(Application.dataPath + @"\TextFile\20\RacketRot.txt");
+    public static StreamWriter FallPointFilePath = File.AppendText(Application.dataPath + @"\TextFile\20\FallPoint.txt");
 
     //ターゲットにHITしたとき
     public static void WriteHitTargetNum()
